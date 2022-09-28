@@ -4,6 +4,7 @@ document.addEventListener(`keydown`, (e) => {
 	const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
 
 	div.classList.toggle(`playing`);
+	audio.currentTime = 0;
 	audio.play();
 
 	setTimeout(() => {
