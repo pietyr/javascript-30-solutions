@@ -1,6 +1,12 @@
 document.addEventListener(`keydown`, (e) => {
 	const keyCode = e.keyCode;
-	document
-		.querySelector(`div[data-key="${keyCode}"]`)
-		.classList.toggle(`playing`);
+	const div = document.querySelector(`div[data-key="${keyCode}"]`);
+	const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+
+	div.classList.toggle(`playing`);
+	audio.play();
+
+	setTimeout(() => {
+		div.classList.toggle(`playing`);
+	}, 100);
 });
